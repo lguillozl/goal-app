@@ -1,15 +1,17 @@
 import './App.css';
-import { Meta } from './components/list/Meta';
-import { Footer } from './components/shared/Footer';
 import { Head } from './components/shared/Head';
 import { Hero } from './components/shared/Hero';
+import { Footer } from './components/shared/Footer';
+import { List } from './components/list/List';
+import { Details } from './components/new/Details';
 
 function App() {
   return (
     <div className="App">
       <Head />
       <Hero>
-        <Meta />
+        {/* <List /> */}
+        <Details />
       </Hero>
       <Footer />
     </div>
