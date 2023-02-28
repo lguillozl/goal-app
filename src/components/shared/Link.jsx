@@ -1,10 +1,12 @@
+import { NavLink } from 'react-router-dom';
 import styles from './Link.module.css';
 
-export const Link = ({Icon, text, href}) => {
+
+export function Link ({Icon, text, to}) {
   return (
-    <a href={href} className={styles.link}>
+    <NavLink to={to} className={styles.link}>
         <Icon className={styles.icon} />
         { text && <span className={styles.text}>{text}</span>}
-    </a>
+    </NavLink>
   )
 }

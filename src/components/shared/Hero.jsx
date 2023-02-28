@@ -3,17 +3,17 @@ import { Link } from './Link';
 import { ReactComponent as ListSVG} from '../../img/lista.svg';
 import {ReactComponent as NewSVG} from '../../img/nueva.svg';
 
-export const Hero = ({children}) => {
+export function Hero ({children}) {
   return (
     <div className={styles.hero}>
         <aside className={styles.aside}>
             <Link 
-              href='/lista' 
+              to='/list' 
               text='Lista de Metas'
               Icon={ListSVG}
             />
             <Link 
-              href='/crear' 
+              to='/new' 
               text='Nueva Meta' 
               Icon={NewSVG}
             />

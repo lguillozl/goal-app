@@ -1,30 +1,18 @@
+import { useContext } from "react";
+import { Outlet } from "react-router-dom";
+import { Context } from "../../services/Memory";
 import { Goal } from "./Goal"
 
-const listMoack = [
-    {
-        id: 1,
-        details: 'Correr por 30 min',
-        time: 'día',
-        event: 1,
-        icon: '👟',
-        days: 365,
-        date: '2023-03-01',
-        completed: 5
-    },
-    {
-        id: 2,
-        details: 'Estudiar por 60 min',
-        time: 'día',
-        event: 1,
-        icon: '📚',
-        days: 365,
-        date: '2023-03-01',
-        completed: 10
-    }
-];
+export function List() {
 
-export const List = () => {
+  const [goals] = useContext(Context);
+
   return (
-    listMoack.map(goal => <Goal {...goal}></Goal>)
+    <>
+      { goals.order.map(id => (
+        <Goal key={id} { ...goals.objects[id] }></Goal>
+        ))}
+      <Outlet />
+    </>
   )
 }
